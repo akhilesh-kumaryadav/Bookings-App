@@ -1,7 +1,5 @@
 import mongoose from "mongoose";
-const { Schema } = mongoose;
-
-const UserSchema = new Schema(
+const UserSchema = new mongoose.Schema(
   {
     username: {
       type: String,
@@ -13,6 +11,21 @@ const UserSchema = new Schema(
       required: true,
       unique: true,
     },
+    country: {
+      type: String,
+      required: true,
+    },
+    img: {
+      type: String,
+    },
+    city: {
+      type: String,
+      required: true,
+    },
+    phone: {
+      type: String,
+      required: true,
+    },
     password: {
       type: String,
       required: true,
@@ -20,7 +33,7 @@ const UserSchema = new Schema(
     isAdmin: {
       type: Boolean,
       default: false,
-    },
+    }, 
   },
   { timestamps: true }
 );
